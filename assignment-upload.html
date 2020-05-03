@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+   <meta charset="utf-8">
+   <title>RealSchool-Klub LMS || 2020</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="apple-touch-icon" href="asset/img/favicon.png">
+   <link rel="icon" href="asset/img/favicon.png">
+   <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+   <link rel="stylesheet" href="asset/css/fontawsome.css">
+   <link rel="stylesheet" href="asset/css/animate.css">
+   <link rel="stylesheet" href="asset/css/nice-select.css">
+   <link rel="stylesheet" href="asset/css/venobox.css">
+   <link rel="stylesheet" href="asset/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="asset/css/style.css">
+   <link rel="stylesheet" href="asset/css/custom.css">
+   <link rel="stylesheet" href="asset/css/responsive.css">
+   <!-- this is for mordanizar js link -->
+   <script src="asset/js/vendor/modernizr-3.6.0.min.js"></script>
+</head>
+
+<body>
+   <!-- start workshop header -->
+   <header id="workShopHeader" class="hide_mobile">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">
+               <div class="workShopHeaderBack">
+                  <a href="assignment.html">
+                     <img class="img-fluid" src="asset/img/icons/angle_left.png" alt="">
+                  </a>
+               </div>
+            </div>
+            <div class="col-xl-10 col-lg-11 col-md-11 col-sm-11">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                     <div class="workShopHeaderMenu text-center">
+                        <a href="workshop-details.html">OVERVIEW</a>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                     <div class="workShopHeaderMenu text-right">
+                        <a class="active" href="assignment.html">ASSIGNMENTS</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- end workshop header -->
+   <!-- upload assignment mobile header -->
+   <section id="uploadheaderMobile" class="show_mobile">
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="uploadheaderMobileContent">
+                  <p>Submit your Assignment</p>
+                  <a href="assignment.html"><i class="fal fa-times"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- upload assignment mobile header -->
+
+   <!-- assignment upload info mobile -->
+   <section id="assignmentUploadInfoMobile" class="show_mobile">
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="assignmentUploadInfoMobileContent">
+                  <h4>CREATIVE EXPRESSION</h4>
+                  <h3>Zentangle Art</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- assignment upload info mobile -->
+
+
+
+
+
+
+
+   <!-- start upload main area -->
+   <section id="assignUpload">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-10 col-sm-10 mx-auto">
+               <div class="assignUploadTop text-center">
+                  <p>Lorem ipsum dolor sit amet, consetetur Share your assignment here </p>
+                  <form action="#">
+                     <input onchange="checkfile()" type="file" id="assignFile" name="file">
+                     <label for="assignFile">
+                        <i class="fal fa-upload"></i>
+                        Upload File(s)
+                     </label>
+                  </form>
+                  <p id="fileNme"></p>
+               </div>
+               <div class="assignUploadPreview text-center">
+                  <div class="previewUploadImage">
+                     <div class="previewUploadImageImage">
+                        <img id="assignPreview" class="img-fluid" src="asset/img/img/16.png" alt="">
+                     </div>
+                     <div class="previewUploadImageBtn">
+                        <a id="fileRemoveBtn" href="#">REMOVE</a>
+                        <a class="btn_sp" href="#">REUPLOAD</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- end upload main area -->
+
+   <!-- start assignment upload button -->
+   <section id="assignuploadBtn">
+      <div class="assignuploadBtnContent text-center">
+         <a href="#">SUBMIT ASSIGNMENT</a>
+      </div>
+   </section>
+   <!-- end assignment upload button -->
+
+
+   <!-- all javascript load here -->
+   <script src="asset/js/vendor/jquery-3.3.1.min.js"></script>
+   <script src="asset/js/bootstrap.bundle.min.js"></script>
+   <script src="asset/js/owl.carousel.min.js"></script>
+   <script src="asset/js/jquery.nice-select.min.js"></script>
+   <script src="asset/js/date-time-picker.min.js"></script>
+   <script src="asset/js/venobox.min.js"></script>
+   <script src="asset/js/custom.js"></script>
+   <script>
+      $(document).ready(function () {
+         // this is for user image preview
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+
+               reader.onload = function (e) {
+                  $('#assignPreview').attr('src', e.target.result);
+               }
+               reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+         }
+         $("#assignFile").change(function () {
+            readURL(this);
+            if ($(this).file.length == 0) {
+               console.log("no files selected");
+            } else {
+               console.log("select");
+            }
+         });
+
+
+         $('#fileRemoveBtn').on('click', function () {
+            $('#assignFile').val('');
+            $('#assignPreview').attr('src', 'asset/img/img/16.png');
+            return false;
+         });
+      });
+   </script>
+</body>
+
+</html>
